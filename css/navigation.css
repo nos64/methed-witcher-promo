@@ -1,0 +1,47 @@
+/* gap: 25px; задает margin между элементами */
+.navigation__list {
+    display: flex;
+    gap: 25px;
+}
+
+/* Оофрмляем ссылки на видеосервисы Убираем outline только если добавляем свою */
+.navigation__link {
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 1px solid transparent;
+    transition: border 0.3s ease-in-out, 
+        box-shadow 0.3s ease-in-out,
+        background-color 0.2s ease-in-out;
+    outline: 0;
+}
+
+.navigation__link:hover{
+    background-color: #FFFFFF;
+}
+
+.navigation__link:active {
+    background-color: #FFFFFF;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.7);
+}
+ 
+.navigation__link:focus {
+    background-color: #FFFFFF;
+    border-color: #5B5B5B;
+}
+
+.navigation__link_netflix {
+    background-image: url('../img/netflix.svg');
+}
+
+.navigation__link_okko {
+    background-image: url('../img/okko.svg');
+}
+
+.navigation__link_kinopoisk {
+    background-image: url('../img/kinopoisk.svg');
+}

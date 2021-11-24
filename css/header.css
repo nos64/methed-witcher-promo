@@ -1,0 +1,20 @@
+.header {
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+/* Разбиваем header на 3 части */
+.header__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+}
+
+/* Выравниванием элементы относительно header */
+.header__announcment {
+    justify-self: center;
+}
+
+.header__navigation {
+    justify-self: end;
+}

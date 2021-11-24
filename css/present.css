@@ -1,0 +1,46 @@
+.present {
+    padding-top: 27px;
+}
+
+.present__title {
+    font-family: 'IBM Plex Mono';
+    font-weight: 500;
+    font-size: 90px;
+    line-height: 120%;
+    margin-bottom: 8px;
+}
+
+.present__tegline {
+    max-width: 290px;
+    line-height: 130%;
+    margin-bottom: 54px;
+    font-family: Arial;
+    font-size: 16px;
+    line-height: 130%;
+}
+
+.present__btn {
+    display: block;
+    width: 285px;
+    height: 68px;
+    background-image: url('../img/button.png');
+    filter: drop-shadow(-4px 6px 10px rgba(10, 10, 10, 0.51));
+    border-radius: 2px;
+    background-position: center;
+    background-size: cover;
+    transition: filter .3s ease-in-out;
+    outline: none;
+}
+
+.present__btn:hover,
+.present__btn:active {
+    filter: drop-shadow(-4px 6px 10px rgba(10, 10, 10, 0.51)) brightness(1.1);
+}
+
+.present__btn:focus {
+    filter: drop-shadow(-4px 6px 10px rgba(10, 10, 10, 0.51)) brightness(0.85);
+}
+
+.present__hero {
+    margin-bottom: 30px;
+}

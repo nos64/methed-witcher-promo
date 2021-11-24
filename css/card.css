@@ -1,0 +1,26 @@
+.card__video {
+    flex-basis: 285px;
+}
+
+.cart__video-img {
+    width: 100%;
+    height: 146px;
+    object-fit: cover;
+    object-position: center;
+    margin-bottom: 10px;
+}
+
+.cart__img {
+    flex-basis: 255px;
+}
+
+.card__photo-img {
+    width: 100%;
+    height: 206px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.card__product {
+    flex-basis: 285px;
+}
