@@ -1,0 +1,71 @@
+/* Для позиционирования различнх элементов отностиельно html */
+html {
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* Наследование свойства box-sizing border-box говорит браузеру учитывать любые границы и внутренние отступы в значениях, которые вы указываете в ширине и высоте элемента*/
+*,
+*:after,
+*:before {
+    box-sizing: inherit;
+}
+
+/* указываем значения по умолчанию */
+/* Указываем основной цвет фона и цвет шрифта, на случай не загрузки страницы */
+/* min-width - по минимальному размера макета, min-height: 100vh - видимая часть  */
+body {
+    min-width: 320px;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.2;
+    background-color: #000;
+    color: #fff;
+    background-image: linear-gradient(181.78deg, rgba(0, 0, 0, 0) 49.38%, rgba(0, 0, 0, 0.42) 98.49%),
+        url('../img/background.jpg');
+}
+
+/* Для того, чтобы картинки не выпадали из контейнера */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+button {
+    cursor: pointer;
+    padding: 0;
+}
+
+/* Убираем у ссылок подчеркивание и наследуем цвет текста */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+p,
+figure {
+    margin: 0;
+}
+
+/* Убираем границы для видео */
+iframe {
+    border: none;
+}
+
+/* Задаем размер конейнера по контенту макета */
+.container {
+    max-width: 1110px;
+    margin-left: auto;
+    margin-right: auto;
+}
