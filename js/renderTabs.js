@@ -50,8 +50,9 @@ const getCard = function(dataCard) {
     return li;
 }
 
+const tabsContent = document.querySelectorAll('.tabs__content');
 const renderTabs = async (i = 0) => {
-    const tabsContent = document.querySelectorAll('.tabs__content');
+    
 
     const type = tabsContent[i].dataset.base;
     

@@ -29,6 +29,10 @@
     gap: 30px;
 }
 
+.tabs__list {
+    min-height: 270px;
+}
+
 .tabs__item {
     display: none;
 }
