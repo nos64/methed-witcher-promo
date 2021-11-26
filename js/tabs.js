@@ -17,12 +17,13 @@ const tabs = (option) => {
                 if (tabsBtns[i] === btn) {
                     tabsBtns[i].classList.add(activeClassButton);
                     tabsElems[i].classList.add(activeClassTab);
+                    callback(i);
                 } else {
                     tabsBtns[i].classList.remove(activeClassButton);
                     tabsElems[i].classList.remove(activeClassTab);
                 }
             }
-            console.log(btn, activeClassButton, activeClassTab)
+            // console.log(btn, activeClassButton, activeClassTab)
         });
     });
 
