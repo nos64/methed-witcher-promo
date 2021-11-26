@@ -6,7 +6,7 @@
 /* Разбиваем header на 3 части */
 .header__container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
 }
 
@@ -17,4 +17,17 @@
 
 .header__navigation {
     justify-self: end;
+}
+
+/* Горизонтальный адаптив */
+@media (max-width: 750px) {
+    .header__container {
+        grid-template-columns: 60px 1fr 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header__container {
+        grid-template-columns: 45px 1fr 45px;
+    }
 }

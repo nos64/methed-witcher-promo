@@ -25,6 +25,10 @@ body {
     color: #fff;
     background-image: linear-gradient(181.78deg, rgba(0, 0, 0, 0) 49.38%, rgba(0, 0, 0, 0.42) 98.49%),
         url('../img/background.jpg');
+    background-position: center;
+    /*запрет повторения фона*/
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 /* Для того, чтобы картинки не выпадали из контейнера */
@@ -65,7 +69,81 @@ iframe {
 
 /* Задаем размер конейнера по контенту макета */
 .container {
-    max-width: 1110px;
+    max-width: 1172px;
     margin-left: auto;
     margin-right: auto;
+    padding: 0 31px;
+}
+
+.page {
+    position: relative;
+}
+
+.page:before {
+    content: '';
+    position: absolute;
+    right: 96px;
+    bottom: 0;
+    width: 100%;
+    height: calc(100% - 115px);
+    background-image: url('../img/gerald-bg.png');
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: contain;
+    z-index: -1;
+}
+
+/* Вертикальный адаптив */
+@media (min-height: 900px) {
+    .page {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/* Горизонтальный адаптив */
+@media (max-width: 1000px) {
+    body {
+        font-size: 16px;
+    }
+
+    .page:before {
+        right: 0;
+
+        height: calc(100% - 90px);
+    }
+}
+
+@media (max-width: 850px) {
+    .container {
+        padding: 0 39px;
+    }
+
+    
+    .page:before {
+        top: 109px;
+        bottom: auto;
+        height: 448px;
+    }
+}
+
+@media (max-width: 650px) {
+    .container {
+        padding: 0 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 12px;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    .page:before {
+        top: 49px;
+        height: 258px;
+    }
 }

@@ -1,0 +1,60 @@
+/* Размерб цвет и размер полосок - с помощью переменныхб для возможности изменения */
+.burger {
+    --width: 24px;
+    --height: 12px;
+    --color: #fff;
+    --size: 2px;
+    position: relative;
+    width: var(--width);
+    height: var(--height);
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+}
+
+.burger__line {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    width: 100%;
+    height: var(--size);
+    background-color: var(--color);
+    transform: translateY(-50%);
+    transition: transform .3s;
+}
+
+/* Задаем псевдоэлементы (две полоски дополнительные) */
+.burger:before,
+.burger:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: var(--size);
+    background-color: var(--color);
+    transition: transform .3s, top .3s;
+}
+
+.burger:before {
+    top: 0;
+}
+
+.burger:after {
+    top: calc(100% - var(--size));
+}
+
+.burger_active .burger__line {
+    transform: scale(0);
+}
+
+.burger_active::before {
+    top: 50%;
+    transform: rotate(45deg);
+}
+
+.burger_active::after {
+    top: 50%;
+    transform: rotate(-45deg);
+}
