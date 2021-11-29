@@ -1,4 +1,4 @@
-.youtube-modal-overlay {
+.videotube-modal-overlay {
 	color: #fff;
 	display: none;
 	z-index: 995;
@@ -16,7 +16,7 @@
 
 
 
-#youtube-modal-container {
+#videotube-modal-container {
 	z-index: 999;
 	position: fixed;
 	top: 0;
@@ -27,11 +27,11 @@
 	justify-content: center;
 	align-items: center;
 }
-#youtube-modal {
+#videotube-modal {
 	text-align: center;
 	box-shadow: 0 0 40px #333;
 }
-#youtube-modal-loading {
+#videotube-modal-loading {
 	position: fixed;
 	z-index: 997;
 	font-size: 1.5em;
@@ -40,7 +40,7 @@
 	text-align: center;
 	left: 45%;
 }
-#youtube-modal-close {
+#videotube-modal-close {
 	position: fixed;
 	right: 15px;
 	top: 15px;
@@ -55,6 +55,6 @@
 	-moz-transition-duration: 0.1s;
 	transition-duration: 0.1s;
 }
-#youtube-modal-close:hover {
+#videotube-modal-close:hover {
 	background: #333;
 }

@@ -1,5 +1,5 @@
 (() => {
-	const throttle = function (type, name, obj) {
+	const throttle =  (type, name, obj)=> {
 		obj = obj || window;
 		let running = false;
 		const func = function () {
@@ -35,12 +35,11 @@
 			const max = Math.max(from, to);
 			const min = Math.min(from, to);
 			const step = (max - min) / count;
-			console.log(min === to)
 			allAnimation.push({style, from, to, step, reverse: min === to})
 		});
 
 
-		const rafAnimation = function () {
+		const rafAnimation = () => {
 
 			allAnimation.forEach((item) => {
 				if (item.reverse) {
@@ -76,15 +75,12 @@
 
 const init = () => {
 
-
-
 	const overlay = document.createElement('div');
-	overlay.className = 'youtube-modal-overlay'
+	overlay.className = 'videotube-modal-overlay'
 	document.body.insertAdjacentElement('beforeend', overlay);
 
-
 	const video = document.createElement('div');
-	video.id = 'youtube-modal-container'
+	video.id = 'videotube-modal-container'
 
 	const sizeBlockList = [
 		[3840, 2160],
@@ -101,7 +97,7 @@ const init = () => {
 		const sizeBlock = sizeBlockList.find(item => item[0] < window.visualViewport.width) ||
 			sizeBlockList[sizeBlockList.length - 1];
 
-		const iframe = document.getElementById('youtube-modal');
+		const iframe = document.getElementById('videotube-modal');
 		iframe.width = sizeBlock[0];
 		iframe.height = sizeBlock[1];
 		video.style.cssText = `
@@ -123,12 +119,12 @@ const init = () => {
 		overlay.style.height = document.documentElement.clientHeight;
 	}
 
-	const sizeYoutubeModal = () => {
+	const sizeVideoTubeModal = () => {
 		sizeContainer();
 		sizeVideo();
 	}
 
-	const closeYoutubeModal = () => {
+	const closeVideoTubeModal = () => {
 
 		animation(overlay, {
 				end: [['display', 'none']],
@@ -139,18 +135,18 @@ const init = () => {
 				overlay.textContent = "";
 			}
 		);
-		window.removeEventListener("optimizedResize", sizeYoutubeModal);
+		window.removeEventListener("optimizedResize", sizeVideoTubeModal);
 		document.removeEventListener('keyup', closeContainerEsc);
 	}
 
 	const closeContainerEsc = e => {
 		if (e.keyCode === 27) {
-			closeYoutubeModal();
+			closeVideoTubeModal();
 		}
 	}
 
 
-	const openYoutubeModal = e => {
+	const openVideoTubeModal = e => {
 			const target = e.target.closest('.tube');
 			if (!target) return;
 
@@ -171,12 +167,12 @@ const init = () => {
 			);
 
 			overlay.insertAdjacentHTML('beforeend', `
-			<div id="youtube-modal-loading">Загрузка...</div>
-			<div id="youtube-modal-close">&#10006;</div>
-			<div id="youtube-modal-container">
+			<div id="videotube-modal-loading">Загрузка...</div>
+			<div id="videotube-modal-close">&#10006;</div>
+			<div id="videotube-modal-container">
 				<iframe src="http://youtube.com/embed/${idVideo}" 
 					frameborder=0
-					id="youtube-modal" 
+					id="videotube-modal" 
 					allowfullscreen="">
 				</iframe>
 			</div>
@@ -186,14 +182,14 @@ const init = () => {
 			sizeVideo();
 			sizeContainer();
 
-			window.addEventListener("optimizedResize", sizeYoutubeModal);
+			window.addEventListener("optimizedResize", sizeVideoTubeModal);
 			document.addEventListener('keyup', closeContainerEsc);
 		}
 	;
 
 
-	overlay.addEventListener("click", closeYoutubeModal);
-	document.addEventListener('click', openYoutubeModal)
+	overlay.addEventListener("click", closeVideoTubeModal);
+	document.addEventListener('click', openVideoTubeModal)
 
 }
 

@@ -1,5 +1,6 @@
 import burgerMenu from './burger.js';
 import tabs from './tabs.js';
+import './videotube.js';
 
 import renderTabs from './renderTabs.js';
 
@@ -18,4 +19,3 @@ tabs({
 
 
 
-renderTabs()
